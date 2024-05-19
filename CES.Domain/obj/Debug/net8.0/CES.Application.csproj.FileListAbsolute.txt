@@ -1,0 +1,17 @@
+C:\CC.NET\Z-Lastv\CES.Domain\bin\Debug\net8.0\CES.Application.deps.json
+C:\CC.NET\Z-Lastv\CES.Domain\bin\Debug\net8.0\CES.Application.runtimeconfig.json
+C:\CC.NET\Z-Lastv\CES.Domain\bin\Debug\net8.0\CES.Application.dll
+C:\CC.NET\Z-Lastv\CES.Domain\bin\Debug\net8.0\CES.Application.pdb
+C:\CC.NET\Z-Lastv\CES.Domain\bin\Debug\net8.0\CES.Domain.dll
+C:\CC.NET\Z-Lastv\CES.Domain\bin\Debug\net8.0\CES.Domain.pdb
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.csproj.AssemblyReference.cache
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.AssemblyInfoInputs.cache
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.AssemblyInfo.cs
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.csproj.CoreCompileInputs.cache
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.csproj.CopyComplete
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.dll
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\refint\CES.Application.dll
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.pdb
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.genruntimeconfig.cache
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\ref\CES.Application.dll
