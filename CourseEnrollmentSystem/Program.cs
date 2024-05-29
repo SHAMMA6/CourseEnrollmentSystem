@@ -15,17 +15,45 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Reflection;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using CES.Infrastructur.HAndeler;
+using CorrelationId.DependencyInjection;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
+// Configure Serilog
 
-// Add services to the container.
+Log.Logger = new LoggerConfiguration()
+    .Enrich.WithCorrelationId()
+    .WriteTo.Console()
+    .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
-builder.Services.AddControllers();
+try
+{
+    Log.Information("Starting up the application");
+    
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+    // Add services to the container
+    builder.Services.AddDefaultCorrelationId(options =>
+    {
+        options.RequestHeader = "X-Correlation-ID";
+        options.ResponseHeader = "X-Correlation-ID";
+        options.LoggingScopeKey = "CorrelationId";
+        options.EnforceHeader = false;
+    });
+    builder.Host.UseSerilog();
+
+
+
+
+    // Add services to the container.
+
+    builder.Services.AddControllers();
+
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
 
 
 
@@ -57,11 +85,7 @@ builder.Services.AddScoped<StudentValidator>();
 
 
 // AutoMapper
-//builder.Services.AddAutoMapper(Mapper);
-
-//builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 
 
@@ -71,6 +95,9 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 var app = builder.Build();
 
 
+
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -78,10 +105,28 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseHttpsRedirection();
+app.UseRouting();
+
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Application start-up failed");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

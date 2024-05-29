@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CES.Infrastructur.Configurations.EntityConfigurations
 {
-    public class LevelConfiguration : IEntityConfiguration<Level>
+    public class LevelConfiguration : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Level>
     {
         public void Configure(EntityTypeBuilder<Level> builder)
         {

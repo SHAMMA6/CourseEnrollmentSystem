@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CES.Infrastructur.Configurations.EntityConfigurations
 {
-    public class InstructorConfiguration : IEntityConfiguration<Instructor>
+    public class InstructorConfiguration : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Instructor>
     {
         public void Configure(EntityTypeBuilder<Instructor> builder)
         {

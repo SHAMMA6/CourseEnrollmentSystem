@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CES.Infrastructur.Configurations.EntityConfigurations
 {
-    public class StudentConfiguration : IEntityConfiguration<Student>
+    public class StudentConfiguration : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Student>
     {
         public void Configure(EntityTypeBuilder<Student> builder)
         {

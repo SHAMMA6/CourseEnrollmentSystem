@@ -1,5 +1,6 @@
 ﻿
 using CES.Application.DTOs;
+using CES.Application.DTOs.APIRESPONDS;
 using CES.Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +9,7 @@ namespace CourseEnrollmentSystem.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CourseController : Controller
+    public class CourseController : ControllerBase
     {
         private readonly ICourseService _courseService;
 
@@ -23,28 +24,48 @@ namespace CourseEnrollmentSystem.Controllers
             try
             {
                 var courseId = await _courseService.CreateCourseAsync(creatCourseDTO);
-                return Ok(new { CourseId = courseId, Message = "Course created successfully." });
+                var response = new ApiResponse<object>
+                {
+                    Success = true,
+                    Message = "Course created successfully.",
+                    Data = new { CourseId = courseId }
+                };
+                return Ok(response);
             }
             catch (InvalidOperationException ex)
             {
-                return BadRequest(new { Message = ex.Message });
+                var response = new ApiResponse<object>
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Errors = new List<string> { ex.Message }
+                };
+                return BadRequest(response);
             }
-
         }
 
-
-
         [HttpPut("{courseId}/update-description")]
-        public async Task<IActionResult> UpdateCourseDescription(UpdateCourseDTO updateCourseDTO)
+        public async Task<IActionResult> UpdateCourseDescription(int courseId, UpdateCourseDTO updateCourseDTO)
         {
             try
             {
                 await _courseService.UpdateCourseDescriptionAsync(updateCourseDTO);
-                return Ok(new { Message = "Course description updated successfully." });
+                var response = new ApiResponse<object>
+                {
+                    Success = true,
+                    Message = "Course description updated successfully."
+                };
+                return Ok(response);
             }
             catch (InvalidOperationException ex)
             {
-                return BadRequest(new { Message = ex.Message });
+                var response = new ApiResponse<object>
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Errors = new List<string> { ex.Message }
+                };
+                return BadRequest(response);
             }
         }
     }

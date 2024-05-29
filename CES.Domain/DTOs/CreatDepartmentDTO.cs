@@ -8,6 +8,7 @@ namespace CES.Application.DTOs
 {
     public class CreatDepartmentDTO
     {
+        
         public string departmentName {  get; set; }
     }
 }

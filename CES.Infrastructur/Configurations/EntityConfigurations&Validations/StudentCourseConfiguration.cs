@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace CES.Infrastructur.Configurations.EntityConfigurations
 {
-    public class StudentCourseConfiguration : IEntityConfiguration<StudentCourse>
+    public class StudentCourseConfiguration : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<StudentCourse>
     {
         public void Configure(EntityTypeBuilder<StudentCourse> builder)
         {
-           builder
+            builder
                 .HasKey(sc => new { sc.StudentId, sc.CourseId });
 
             builder

@@ -42,18 +42,7 @@ namespace CES.Infrastructur.Features.CourseOP
                 throw new InvalidOperationException("A course with the same name already exists in the department.");
             }
 
-            // Create a new course
-
-            //Course course = new Course()
-            //{
-            //    Name = creatCourseDTO.courseName,
-            //    Description = creatCourseDTO.courseDescription,
-            //    CreditHours = creatCourseDTO.CreditHours,
-            //    LevelId = creatCourseDTO.levelId,
-            //    DepartmentId = creatCourseDTO.departmentId,
-            //    InstructorId = creatCourseDTO.instructorId,
-            //    CourseTypeId = creatCourseDTO.CourseTypeId
-            //};
+            
 
             var newCourse = _mapper.Map<Course>(creatCourseDTO);
 

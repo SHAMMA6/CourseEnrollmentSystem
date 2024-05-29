@@ -52,7 +52,14 @@ namespace CES.Infrastructur.Features.StudentCourseOP
 
 
             // Enroll the student in the course
-            var studentCourse = _mapper.Map<StudentCourse>(studentCourseDTO);
+            //var studentCourse = _mapper.Map<StudentCourse>(studentCourseDTO);
+
+            var studentCourse = new StudentCourse()
+            {
+                CourseId = studentCourseDTO.courseId,
+                StudentId = studentCourseDTO.studentId
+            };
+
 
             _context.StudentCourses.Add(studentCourse);
             await _context.SaveChangesAsync();

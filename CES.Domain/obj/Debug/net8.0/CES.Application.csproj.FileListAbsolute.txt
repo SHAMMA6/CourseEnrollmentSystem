@@ -9,6 +9,7 @@ C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.GeneratedMSBuildEd
 C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.AssemblyInfoInputs.cache
 C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.AssemblyInfo.cs
 C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.csproj.CoreCompileInputs.cache
+C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.sourcelink.json
 C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.csproj.CopyComplete
 C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\CES.Application.dll
 C:\CC.NET\Z-Lastv\CES.Domain\obj\Debug\net8.0\refint\CES.Application.dll

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CES.Infrastructur.Configurations.EntityConfigurations
 {
-    public class CourseTypeConfiguration : IEntityConfiguration<CourseType>
+    public class CourseTypeConfiguration : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<CourseType>
     {
         public void Configure(EntityTypeBuilder<CourseType> builder)
         {

@@ -27,16 +27,9 @@ namespace CES.Infrastructur.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+
             // Apply configurations for other entities
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CourseConfiguration).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(StudentConfiguration).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CourseTypeConfiguration).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(InstructorConfiguration).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AdminConfiguration).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(LevelConfiguration).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(DepartmentConfiguration).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(StudentCourseConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
 
 
 

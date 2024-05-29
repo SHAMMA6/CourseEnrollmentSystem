@@ -11,6 +11,7 @@ C:\CC.NET\Z-Lastv\CES.Infrastructur\obj\Debug\net8.0\CES.Infrastructur.Generated
 C:\CC.NET\Z-Lastv\CES.Infrastructur\obj\Debug\net8.0\CES.Infrastructur.AssemblyInfoInputs.cache
 C:\CC.NET\Z-Lastv\CES.Infrastructur\obj\Debug\net8.0\CES.Infrastructur.AssemblyInfo.cs
 C:\CC.NET\Z-Lastv\CES.Infrastructur\obj\Debug\net8.0\CES.Infrastructur.csproj.CoreCompileInputs.cache
+C:\CC.NET\Z-Lastv\CES.Infrastructur\obj\Debug\net8.0\CES.Infrastructur.sourcelink.json
 C:\CC.NET\Z-Lastv\CES.Infrastructur\obj\Debug\net8.0\CES.Infrastructur.csproj.CopyComplete
 C:\CC.NET\Z-Lastv\CES.Infrastructur\obj\Debug\net8.0\CES.Infrastructur.dll
 C:\CC.NET\Z-Lastv\CES.Infrastructur\obj\Debug\net8.0\refint\CES.Infrastructur.dll

@@ -1,5 +1,6 @@
 ﻿
 using CES.Application.DTOs;
+using CES.Application.DTOs.APIRESPONDS;
 using CES.Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +9,7 @@ namespace CourseEnrollmentSystem.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentController : Controller
+    public class StudentController : ControllerBase
     {
         private readonly IStudentService _studentService;
 
@@ -23,11 +24,23 @@ namespace CourseEnrollmentSystem.Controllers
             try
             {
                 var studentId = await _studentService.RegisterStudentAsync(creatStudentDto);
-                return Ok(new { StudentId = studentId, Message = "Student registered successfully & Enrolled to required courses." });
+                var response = new ApiResponse<object>
+                {
+                    Success = true,
+                    Message = "Student registered successfully & Enrolled to required courses.",
+                    Data = new { StudentId = studentId }
+                };
+                return Ok(response);
             }
             catch (InvalidOperationException ex)
             {
-                return BadRequest(new { Message = ex.Message });
+                var response = new ApiResponse<object>
+                {
+                    Success = false,
+                    Message = ex.Message,
+                    Errors = new List<string> { ex.Message }
+                };
+                return BadRequest(response);
             }
         }
     }

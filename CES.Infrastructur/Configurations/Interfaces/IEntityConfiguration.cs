@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CES.Infrastructur.Configurations.Interfaces
 {
-    public interface IEntityConfiguration<TEntity> where TEntity : class
+    public interface IEntityTypeConfiguration<TEntity> where TEntity : class
     {
         void Configure(EntityTypeBuilder<TEntity> builder);
     }
